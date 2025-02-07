@@ -11,16 +11,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Camera Live</title>
+    {% include "base.html" %}
 </head>
 
 <body>
+    <br><br>
     <!-- ::::::::::::Camera Live::::::::::::::: -->
+
+    {% block content %}
 
     <div class="container" style="margin: 20px auto; width: 50%;">
         <h1 class="my-5">Live Camera with Face Detection</h1>
-        <video id="video" class="" autoplay
-            style=" width: 100%; border: 1.5px solid black; border-radius: 8px;"></video>
+        <video id="video" class="" autoplay style=" width: 100%; border: 1.5px solid black; border-radius: 8px;"></video>
         <canvas id="canvas" style="display: none;"></canvas>
         <button id="capture" class="btn btn-outline-success">Capture</button>
         <button id="startCamera" class="btn btn-outline-success">Start Camera</button>
@@ -31,22 +33,22 @@
         <h1>Form Submission</h1>
         <h2>
             <pre class="text-justify">
-                    <Big>Required:</Big>
-    
-                    सबै फिल्डहरू वास्तविक र सही हुनुपर्छ। कृपया फारम 
-                    बुझाउनु अघि सबै विवरणहरू ध्यानपूर्वक जाँच गर्नुहोस्।
-                    
-                    फारम बुझाउने प्रक्रिया:
-                    
-                    1.  आवश्यक सबै फिल्डहरू सही रूपमा भरिएको छ भन्ने सुनिश्चित गर्नुहोस्।
-                    2.  कुनै गलत वा भ्रामक जानकारी प्रविष्ट नगर्नुहोस्।
-                    3.  एक पटक बुझाइसकेपछि, सुधार गर्न सकिने छैन।
-                    4.  तपाईंले बुझाएपछि, तपाईंको विवरण समीक्षा गरिनेछ।
-                    5. तपाईंका शब्दहरू अंग्रेजी भाषामा हुनुपर्छ।
-    
-                    कृपया "Submit" बटन थिचेर फारम बुझाउनुहोस्।
-                    
-                </pre>
+                        <Big>Required:</Big>
+        
+                        सबै फिल्डहरू वास्तविक र सही हुनुपर्छ। कृपया फारम 
+                        बुझाउनु अघि सबै विवरणहरू ध्यानपूर्वक जाँच गर्नुहोस्।
+                        
+                        फारम बुझाउने प्रक्रिया:
+                        
+                        1.  आवश्यक सबै फिल्डहरू सही रूपमा भरिएको छ भन्ने सुनिश्चित गर्नुहोस्।
+                        2.  कुनै गलत वा भ्रामक जानकारी प्रविष्ट नगर्नुहोस्।
+                        3.  एक पटक बुझाइसकेपछि, सुधार गर्न सकिने छैन।
+                        4.  तपाईंले बुझाएपछि, तपाईंको विवरण समीक्षा गरिनेछ।
+                        5. तपाईंका शब्दहरू अंग्रेजी भाषामा हुनुपर्छ।
+        
+                        कृपया "Submit" बटन थिचेर फारम बुझाउनुहोस्।
+                        
+                    </pre>
         </h2>
         <form id="contactForm">
             <div class="row">
@@ -66,22 +68,22 @@
                         aria-label="Birthplace">
                 </div>
             </div>
-
+    
             <div class="row my-4">
-
+    
                 <div class="col-md-6">
                     <label for="permanent" class="form-label"><strong>Permanent Address</strong></label>
                     <input type="text" name="permanent" class="form-control" id="permanent"
                         placeholder="Sunsari, Dharan-15">
                 </div>
-
+    
                 <div class="col-md-4">
                     <label for="issue" class="form-label"><strong>Date Issue</strong></label>
                     <input type="date" name="issue" class="form-control" id="issue" placeholder="Enter the date in AD">
                 </div>
-
+    
             </div>
-
+    
             <div class="row g-3">
                 <div class="col-md-6">
                     <label for="city" class="form-label"><strong>City</strong></label>
@@ -98,8 +100,8 @@
                         <option>Lumbini Province</option>
                         <option>Karnali Province</option>
                         <option>Sudhurparchim Province</option>
-
-
+    
+    
                     </select>
                 </div>
                 <div class="col-md-2">
@@ -107,9 +109,9 @@
                     <input type="text" name="zip" class="form-control" id="zip">
                 </div>
             </div>
-
+    
             <div class="container mx-0 my-2">
-
+    
                 <h2>Upload Images</h2>
                 <div class="row justify-content-between">
                     <div class="col-6">
@@ -121,14 +123,17 @@
                         <img id="preview2" alt="Uploaded Image 2">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-outline-success my-2"
-                    id="submitBtn"><strong>Submit</strong></button>
+                <button type="submit" class="btn btn-outline-success my-2" id="submitBtn"><strong>Submit</strong></button>
             </div>
         </form>
-
-
+    
+    
     </div>
 
+
+
+
+    {% endblock %}
 
 
     <script>
